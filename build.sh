@@ -15,22 +15,12 @@ packages=(
 	python-setuptools
 	python-wheel
 	python-pyparted
+	wget
+	cowsay
+	networkmanager
 )
 
-mkdir -p /tmp/archlive/airootfs/root/archinstall-git
-cp -r . /tmp/archlive/airootfs/root/archinstall-git
-
-cat <<- _EOF_ | tee /tmp/archlive/airootfs/root/.zprofile
-	cd archinstall-git
-	rm -rf dist
-
-	python -m build --wheel --no-isolation
-	pip install dist/archinstall*.whl --break-system-packages
-
-	echo "This is an unofficial ISO for development and testing of archinstall. No support will be provided."
-	echo "This ISO was built from Git SHA $GITHUB_SHA"
-	echo "Type archinstall to launch the installer."
-_EOF_
+mkdir -p /tmp/archlive/
 
 pacman --noconfirm -S archiso
 
