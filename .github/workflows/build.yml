@@ -28,3 +28,7 @@ jobs:
         with:
           name: archlinux
           path: /tmp/archlive/out/*.iso
+      - uses: nickatnight/releases-action@v2
+        with:
+          branch: main
+          
