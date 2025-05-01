@@ -18,6 +18,7 @@ packages=(
 	wget
 	cowsay
 	networkmanager
+ 	archinstall
 )
 
 mkdir -p /tmp/archlive/
